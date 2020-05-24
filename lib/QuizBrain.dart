@@ -29,6 +29,7 @@ class QuizBrain {
     Quiz(
         'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',
         true),
+    Quiz('This is the last quiz.\nDo you restart?', true),
   ];
 
   String getQuestion() {
@@ -39,8 +40,8 @@ class QuizBrain {
     return _quizzes[_quizNumber].getAnswer();
   }
 
-  bool isLastQuiz(int scoreKeeperLength) {
-    return scoreKeeperLength == _quizzes.length;
+  bool isLastQuiz() {
+    return _quizNumber == _quizzes.length - 1;
   }
 
   bool checkAnswer(bool userChoice) {
@@ -51,5 +52,9 @@ class QuizBrain {
     if (_quizNumber < _quizzes.length - 1) {
       _quizNumber++;
     }
+  }
+
+  void restartQuiz() {
+    _quizNumber = 0;
   }
 }

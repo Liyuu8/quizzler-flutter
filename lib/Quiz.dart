@@ -1,17 +1,14 @@
 class Quiz {
-  String _question;
-  bool _answer;
+  String question;
+  bool answer;
 
-  Quiz(String question, bool answer) {
-    this._question = question;
-    this._answer = answer;
-  }
+  Quiz(this.question, this.answer);
 
   String getQuestion() {
-    return this._question;
+    return this.question;
   }
 
   bool getAnswer() {
-    return this._answer;
+    return this.answer;
   }
 }
